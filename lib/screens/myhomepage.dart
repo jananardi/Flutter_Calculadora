@@ -33,24 +33,40 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter2--;
     });
   }
+
   void _somar() {
     setState(() {
-      _counter+_counter2;
+      _resultado = (_counter + _counter2).toDouble();
     });
   }
+
   void _diminuir() {
     setState(() {
-      _counter-_counter2;
+      _resultado = (_counter - _counter2).toDouble();
     });
   }
-  void _dividir() {
-    setState(() {
-      _counter/_counter2;
-    });
-  }
+
   void _vezes() {
     setState(() {
-      _counter*_counter2;
+      _resultado = (_counter * _counter2).toDouble();
+    });
+  }
+
+  void _dividir() {
+    setState(() {
+      if (_counter2 != 0) {
+        _resultado = _counter / _counter2;
+      } else {
+        _resultado = 0;
+      }
+    });
+  }
+
+  void _limpar() {
+    setState(() {
+      _counter = 0;
+      _counter2 = 0;
+      _resultado = 0;
     });
   }
   @override
@@ -201,7 +217,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text('*')
                 )
               ],
-            )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    _limpar();
+                  },
+                  child: const Text('Limpar'),
+                )
+              ],
+            ),
           ],
         ),
       ),
