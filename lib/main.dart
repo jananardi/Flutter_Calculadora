@@ -1,4 +1,5 @@
 import 'package:aula01flutter/screens/myhomepage.dart';
+import 'package:aula01flutter/screens/segunda_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.blueGrey),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+       home: const MyHomePage(title: 'Calculadora'),
     );
   }
 }

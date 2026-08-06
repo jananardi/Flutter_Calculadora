@@ -1,3 +1,5 @@
+import 'package:aula01flutter/screens/segunda_page.dart';
+import 'package:aula01flutter/screens/terceira_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -76,6 +78,30 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.blue,
         title: Text(widget.title),
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text("Home"),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "Navegou")));
+              },
+            ),
+            ListTile(
+              title: Text("Segunda Page"),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SegundaPage()));
+              },
+            ),
+            ListTile(
+              title: Text("Terceira Page"),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TerceiraPage()));
+              },
+            )
+          ],
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
@@ -106,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: ElevatedButton.styleFrom(
                         textStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.red
+                            color: Colors.white
                         ),
                         backgroundColor: Colors.greenAccent,
                         alignment: Alignment.center
@@ -223,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.blueGrey,
                     textStyle: const TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
