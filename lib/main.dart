@@ -1,5 +1,5 @@
 import 'package:aula01flutter/screens/myhomepage.dart';
-import 'package:aula01flutter/screens/segunda_page.dart';
+import 'package:aula01flutter/screens/galeria_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
