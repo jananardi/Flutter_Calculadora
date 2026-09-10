@@ -6,6 +6,13 @@ import '../components/menuDrawer.dart';
 import 'myhomepage.dart';
 
 class GaleriaPage extends StatefulWidget{
+  const GaleriaPage({super.key,
+    required this.modoEscuro,
+    required this.aoAlterarTema,
+  });
+
+  final bool modoEscuro;
+  final ValueChanged<bool> aoAlterarTema;
   @override
   State<GaleriaPage> createState() => _GaleriaPageState();
 }
@@ -68,7 +75,7 @@ class _GaleriaPageState extends State<GaleriaPage>{
     
     //InkWell deixa o componente filho clicavel desenhando um efeito no mesmo.
     return InkWell(
-      onTap: () => {},
+      onTap: () => _abrirDetalhesDoGatinho(lugar),
       child: Card(
         elevation: 3,
         child: Stack(
@@ -116,6 +123,32 @@ class _GaleriaPageState extends State<GaleriaPage>{
         ),
       ),
     );
+  }
+
+  void _abrirDetalhesDoGatinho(Map<String,String> lugar){
+    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context){
+      return Padding(padding: EdgeInsets.all(20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(borderRadius: BorderRadius.circular(16),
+          child: SizedBox(height: 400, width: double.infinity, child: Image.asset(lugar['imagem'] ?? '', fit: BoxFit.contain,),),),
+          SizedBox(height: 16,),
+          Text(lugar['nome'] ?? ''),
+          SizedBox(height: 16,),
+          Row(
+            children: [
+              Icon(Icons.location_on, size: 16,),
+              SizedBox(width: 6,),
+              Text(lugar['local'] ?? ''),
+            ],
+          ),
+          SizedBox(height: 16,),
+          Text(lugar['descricao'] ?? '')
+        ],
+      ),);
+    });
   }
 
 }

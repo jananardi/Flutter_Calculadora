@@ -8,15 +8,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'aula01',
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.blueGrey),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.blueGrey),
       ),
-       home: const MyHomePage(title: 'Calculadora'),
+       home: MyHomePage(title: 'Calculadora',modoEscuro: true, aoAlterarTema: (bool value) { }),
     );
   }
 }

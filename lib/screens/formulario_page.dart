@@ -6,6 +6,13 @@ import '../components/menuDrawer.dart';
 import 'myhomepage.dart';
 
 class FormularioPage extends StatefulWidget{
+  const FormularioPage({super.key,
+    required this.modoEscuro,
+    required this.aoAlterarTema,
+  });
+
+  final bool modoEscuro;
+  final ValueChanged<bool> aoAlterarTema;
   @override
   State<FormularioPage> createState() => _FormularioPageState();
 }

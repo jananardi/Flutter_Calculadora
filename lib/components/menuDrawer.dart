@@ -14,19 +14,19 @@ class MenuDrawer extends StatelessWidget{
           ListTile(
             title: Text("Home"),
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "Navegou")));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "Navegou", modoEscuro: true, aoAlterarTema: (bool value) {  },)));
             },
           ),
           ListTile(
             title: Text("Galeria"),
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => GaleriaPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => GaleriaPage(modoEscuro: true, aoAlterarTema: (bool value) {  },)));
             },
           ),
           ListTile(
             title: Text("Formulário"),
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => FormularioPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => FormularioPage(modoEscuro: true, aoAlterarTema: (bool value) {  },)));
             },
           )
         ],
